@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: dimension_stocks
+    columns:
+      - name: stock
+        description: Name of a traded stock
+        tests:
+          - unique
+          - not_null

@@ -1,0 +1,32 @@
+
+version: 2
+
+models:
+  - name: gold_trades
+    description: >
+      Cleaned table with all trades received
+    tags: ['daily']
+    columns:
+      - name: broker
+        description: Corrected name for broker
+      - name: stock
+        description: Full stock name which was traded
+      - name: isin
+        description: ISIN number of the traded stock
+      - name: amount
+        description: Number of shares involved in transaction
+      - name: price
+        description: Price per share for the transaction
+        tags: [
+          'confidential'
+        ]
+        tests:
+          - not_null
+        meta:
+          security_level: confidential
+      - name: type
+        description: Was this a buy or sell transaction
+      - name: filed_at
+        description: When the order was placed with the broker
+      - name: executed_at
+        description: When the broker confirmed the trade was executed

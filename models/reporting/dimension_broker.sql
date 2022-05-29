@@ -1,0 +1,1 @@
+SELECT DISTINCT(broker) FROM {{ ref('gold_trades') }}
